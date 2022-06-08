@@ -1,0 +1,40 @@
+/* .reservation_list{
+    display: flex;
+    justify-content: center;
+} */
+body{ 
+    display: flexbox;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-family: Oxygen, sans-serif;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5 )),
+    url("https://images.pexels.com/photos/277572/pexels-photo-277572.jpeg?cs=srgb&dl=pexels-pixabay-277572.jpg&fm=jpg");
+    background-size: cover;
+    background-position: center;
+    
+}
+.nav-link {
+    color: #fff;
+}
+.nav-item :hover{
+    color: #fff;
+}
+.table {
+    /* display: flex; */
+    justify-content: center;
+    border: 1px solid black;
+    margin-top: 80px;
+    color: black;
+}
+.reservation_list {
+    margin-top: 80px;
+    background-color: #fff;
+}
+ .heading {
+    border: 3px solid black;
+}
+.body {
+    border: 2px solid black;
+}

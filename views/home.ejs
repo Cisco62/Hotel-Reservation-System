@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Royale</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<link rel="stylesheet" href="stylesheet/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- <h1>Hotel Reservation System</h1> -->
+	
+
+	<nav class="navbar fixed-top navbar-expand-lg bg-dark">
+		<div class="container">
+		  <a class="navbar-brand" href="/home"><img src="images/logo2.png"></a>
+		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			  <li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="/">Home</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#about">About</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#menu">Menu</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#gallery">Gallery</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="/reservation">Reservation</a>
+			  </li>
+			</ul>
+			<form class="d-flex" role="search">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<% if (!currentUser) { %> 
+					<li class="nav-item">
+					  <a class="nav-link" href="/user_register">Sign Up / Register</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/userlogin">Login</a>
+					</li>
+					<% } else { %> 
+					<li class="nav-item">
+						<a class="nav-link" href="/logout">Logout</a>
+					</li>
+					<% } %> 
+				</ul>
+			</form>
+		  </div>
+		</div>
+	  </nav>
+
+	  <header class = "header">
+		<div class = "header-info">
+			<img src="images/seperator.png" alt="">
+			<h2>Welcome To City Royale</h2>
+			<h3>Make Your Reservation</h3>
+			<button type = "button" class = "btn"><a class="reg" href = "/user_register">Sign Up For Reservation</a></button>
+			<div>
+				<%= success %>
+			</div>
+		</div>
+	  </header>
+
+	  <!-- About Section 
+		============================================================-->
+		<div class="about padding80" id="about">
+			<div class="container">
+				<div class="about-inner row no-margin">
+
+					<div class="section-head text-center">
+						<h3 class="intro-title main-tit niconne">About Us</h3>
+						<div class="seperator" style="background-image: url(images/seperator.png);"></div>
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+						<div class="about-left section-left animated bounceInLeft slow go">
+							<h4 class="sub-tit niconne">The History</h4>
+							<p class="main-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+							<p class="main-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						</div>
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+						<div class="about-right section-right">
+							<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+								<div class="carousel-inner">
+								  <div class="carousel-item active">
+									<img src="images/img11.jpg" class="d-block w-100" alt="...">
+								  </div>
+								  <div class="carousel-item">
+									<img src="images/img12.jpg" class="d-block w-100" alt="...">
+								  </div>
+								  <div class="carousel-item">
+									<img src="images/img13.jpg" class="d-block w-100" alt="...">
+								  </div>
+								</div>
+							  </div>							
+						</div>
+					</div>
+				</div>				
+			</div>
+		</div>
+		
+		<!-- end of about section -->  
+	  
+		<section id="menu" class = "section menu-sec">
+			<h3 class = "section-header">Menus</h3>
+			<div class="seperator" style="background-image: url(images/seperator.png);"></div>
+			<div class = "menu-container">
+			<div class = "menu-item">
+				<span class = "item-logo"><img src = "images/friedrice and carrot.png" alt = ""></span>
+				<span class = "item-name">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et necessitatibus commodi laboriosam dolorem? Dolorum, quidem</span>
+			</div>
+			<div class = "menu-item">
+				<span class = "item-logo"><img src = "images/garden egg stew.png" alt = ""></span>
+				<span class = "item-name">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et necessitatibus commodi laboriosam dolorem? Dolorum, quidem</span>
+			</div>
+			<div class = "menu-item">
+				<span class = "item-logo"><img src = "images/img13.jpg" alt = ""></span>
+				<span class = "item-name">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et necessitatibus commodi laboriosam dolorem? Dolorum, quidem</span>
+			</div>
+			</div>
+		</section>
+
+	
+
+		         <!-- Features Section-->
+				 <div class="container" id="gallery">
+					<div style="text-align:center">
+					  <h2 class="heading mt-5 mb-4">Gallery</h2>
+					  <div class="seperator" style="background-image: url(images/seperator.png);"></div>
+					  <p></p>
+					</div>
+				   <div class="row align-item-center px-0">
+					 <div class="col-lg-6 mb-2 px-0">
+						<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+							<div class="carousel-inner">
+							  <div class="carousel-item active">
+								<img src="images/ralph-ravi-kayden-FqqiAvJejto-unsplash.jpg" class="d-block w-100" alt="...">
+							  </div>
+							  <div class="carousel-item">
+								<img src="images/roberto-nickson-emqnSQwQQDo-unsplash.jpg" class="d-block w-100" alt="...">
+							  </div>
+							  <div class="carousel-item">
+								<img src="images/saad-khan-425b2PhNuHA-unsplash.jpg" class="d-block w-100" alt="...">
+							  </div>
+							  <div class="carousel-item">
+								<img src="images/visualsofdana-T5pL6ciEn-I-unsplash.jpg" class="d-block w-100" alt="...">
+							  </div>
+							</div>
+						  </div>
+					   <!-- <img class="image-fluid" src="naomi-hebert-MP0bgaS_d1c-unsplash-2.JPG" alt=""> -->
+					 </div>
+					 <div class="col-lg-6 mb-2 pd-5">
+					   <div class="content text-center px-5 py-1">
+						 <h3 class="rooms">OUR LUXIRIOUS ROOMS</h3>
+						 <P class="kitchen-quote">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi doloribus dignissimos eaque adipisci. Consequatur suscipit quas ducimus quibusdam rerum, laborum ex, accusamus animi commodi possimus porro ab nisi! Eaque, tempore.						 </P>
+						 <p class="kitchen-quote">
+						  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						 </p>
+					   </div>
+					 </div>
+				   </div>
+				   <div class="row align-item-center px-0">
+					 <div class="col-lg-6 mb-2">
+					   <div class="content text-center px-5 py-1">
+						<h3 class="rooms">OUR LUXIRIOUS ROOMS</h3>
+						<P class="living-room-quote">A comfortable living room designed with state of the art materials for your comfort and pleasure. Also the spaceous
+						  sit out is breath taken
+						</P>
+						<p class="living-room-quote">
+						  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+									  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+									  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+									  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+									  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					   </div>
+					 </div>
+					 <div class="col-lg-6 mb-2 px-0">
+						<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+							<div class="carousel-inner">
+							  <div class="carousel-item active">
+								<img src="images/manuel-moreno-DGa0LQ0yDPc-unsplash.jpg" class="d-block w-100" alt="...">
+							  </div>
+							  <div class="carousel-item">
+								<img src="images/fernando-alvarez-rodriguez-M7GddPqJowg-unsplash.jpg" class="d-block w-100" alt="...">
+							  </div>
+							  <div class="carousel-item">
+								<img src="images/edvin-johansson-rlwE8f8anOc-unsplash.jpg" class="d-block w-100" alt="...">
+							  </div>
+							  <div class="carousel-item">
+								<img src="images/vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg" class="d-block w-100" alt="...">
+							  </div>
+							</div>
+						  </div>
+					   <!-- <img class="image-fluid" src="alberto-castillo-q-mx4mSkK9zeo-unsplash-2.JPG" alt=""> -->
+					 </div>
+				   </div>    
+			   </div>
+			   <!-- End Of Features Section-->
+	
+
+
+	<footer class = "copyright">
+		<div class="section-footer" id="follow">
+			<h1><span>Follow Us</span></h1>
+			<div>
+				<!-- <a href="#" target="_blank">
+					<img alt="" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"/>
+				</a> -->
+				<a href="#" >
+					<img alt="Facebook" src="https://www.sololearn.com/Uploads/icons/facebook.png"/>
+				</a>
+				<a href="#">
+					<img alt="Twitter" src="https://www.sololearn.com/Uploads/icons/twitter.png" />
+				</a>
+			</div>
+			<div>
+				Or Call +2348133556400
+			</div>
+		</div>
+		<p>&copy; 2022 City Royale</p>
+	</footer>
+
+
+
+	  
+	  
+    
+	
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+</body>
+</html>

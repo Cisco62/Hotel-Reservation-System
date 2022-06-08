@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: steelblue;
+    box-sizing: border-box;
+}
+#main-container {
+   width: 1200;
+   max-width: 100%;
+   min-height: 400px;
+   margin: 120px auto;
+   border: 2px solid rebeccapurple;
+}
+.reservation_details {
+    width: 60%;
+    margin: 0 auto;
+    border: 1px solid red;
+}
+.details {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border: 1px solid green;
+    justify-content: space-between;
+}

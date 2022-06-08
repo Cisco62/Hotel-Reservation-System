@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheet/reservation_list.css">
+</head>
+<body>
+    <!-- <h1>Reservation List</h1> -->
+
+    <nav class="navbar fixed-top navbar-expand-lg bg-dark">
+		<div class="container">
+		  <a class="navbar-brand" href="/home"><img src="images/logo2.png"></a>
+		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			  <li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="/">Home</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="/reservation">Reservation</a>
+			  </li>
+			</ul>
+			<form class="d-flex" role="search">
+        <% if (currentUser) { %>
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+					  <a class="nav-link" href="/user_register">Sign Up / Register</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/userlogin">Login</a>
+					</li>
+          <% } else { %>
+					<li class="nav-item">
+						<a class="nav-link" href="/logout">Logout</a>
+					</li> 
+          <% } %>
+				</ul>
+			</form>
+		  </div>
+		</div>
+	  </nav>
+    
+
+    <div class = "flash">
+			<%= success %>
+		</div>
+    <div class = "reservation_list">
+
+        <table class = "table">
+            <thead>
+                <tr>
+                    <td class = "heading"><strong>First Name</strong></td>
+                    <td class = "heading"><strong>Last Name</strong></td>
+                    <td class = "heading"><strong>Check-in-date</strong></td>
+                    <td class = "heading"><strong>Check-out-date</strong></td>
+                    <td class = "heading"><strong>Day Of The Week</strong></td>
+                    <td class = "heading"><strong>Arrival Time</strong></td>
+                    <td class = "heading"><strong>Number Of Person(s)</strong></td>
+                    <td class = "heading"><strong>Room Type</strong></td>
+                    <td class = "heading"><strong>Phone Number</strong></td>
+                    <td class = "heading"><strong>Email</strong></td>
+                    <!-- <td class = "heading"><strong>Preview</strong></td> -->
+                </tr>
+            </thead>
+            <% for(let reservation of reservations) { %>
+                <tbody>
+                    <tr>
+                        <td class = "body"><%= reservation.first_name %></td>
+                        <td class = "body"><%= reservation.last_name %></td>
+                        <td class = "body"><%= reservation.check_in_date %></td>
+                        <td class = "body"><%= reservation.check_out_date %></td>
+                        <td class = "body"><%= reservation.day_of_the_week %></td>
+                        <td class = "body"><%= reservation.arrival_time %></td>
+                        <td class = "body"><%= reservation.number_of_persons %></td>
+                        <td class = "body"><%= reservation.room_type %></td>
+                        <td class = "body"><%= reservation.phone_number %></td>
+                        <td class = "body"><%= reservation.email %></td>
+                        <!-- <td class = "body"><a href="/reservations/<%= reservation._id %>">Preview</a></td> -->
+                        
+                    </tr>
+                </tbody>
+            <% } %>
+        </table>
+
+        <!-- <ul>
+            <% for(let reservation of reservations) { %> 
+                <li><a href="/reservations/<%= reservation._id %> "><%= reservation.first_name + ' ' + reservation.last_name %></a> </li>
+            <% } %>
+        </ul> -->
+        <a href = "/">Back To Home</a>
+    </div>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+</body>
+</html>
+  

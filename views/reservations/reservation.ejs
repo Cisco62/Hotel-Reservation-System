@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reservation</title>
+	      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link rel="stylesheet" href="stylesheet/reservation.css">
+    </head>
+    <body>
+        <!-- <h1>Reservation</h1> -->
+
+        <nav class="navbar fixed-top navbar-expand-lg bg-dark">
+          <div class="container">
+            <a class="navbar-brand" href="/home"><img src="images/logo2.png"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="/reservation">Reservation</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <% if (!currentUser) { %>
+                <li class="nav-item">
+                  <a class="nav-link" href="/user_register">Sign Up / Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/userlogin">Login</a>
+                </li>
+                <% } else { %> 
+                <li class="nav-item">
+                  <a class="nav-link" href="/logout">Logout</a>
+                </li>
+                <% } %> 
+              </ul>
+            </form>
+            </div>
+          </div>
+          </nav>
+
+          <div class="form-container mt-5">
+            <div class="title">Reservation</div>
+            <form action = "/reservation" method="POST">
+              <div class = "user-details">
+                <div class = "input-box">
+                  <span class = "details">First Name</span>
+                  <input type = "text" name = "reservation[first_name]" id = "first_name" placeholder = "Enter Your FirstName" required>
+                </div>
+                <div class = "input-box">
+                  <span class = "details">Last Name</span>
+                  <input type = "text" name = "reservation[last_name]" id = "last_name" placeholder = "Enter Your LastName" required>
+                </div>
+                <div class = "input-box">
+                  <span class = "details">Email</span>
+                  <input type = "email" name = "reservation[email]" id = "email" placeholder = "Enter Your Email" required>
+                </div>
+                <div class = "input-box">
+                  <span class = "details">Check-in Date</span>
+                  <input type = "date" name = "reservation[check_in_date]" id = "check_in_date" placeholder = "Enter Check-in Date" required>
+                </div>
+                <div class = "input-box">
+                  <span class = "details">Check-out Date</span>
+                  <input type = "date" name = "reservation[check_out_date]" id = "check_out_date" placeholder = "Enter Check-out Date" required>
+                </div>
+                <div class = "input-box">
+                  <span class = "details">Day Of The Week</span>
+                  <select class = "day_of_the_week" name = "reservation[day_of_the_week]" id = "day_of_the_week" required>
+                    <option disabled = "disabled" selected = "selected">--Days Of The Week</option>
+                    <option value = "sunday">Sunday</option>
+                    <option value = "monday">Monday</option>
+                    <option value = "tuesday">Tuesday</option>
+                    <option value = "wednesday">Wednesday</option>
+                    <option value = "thursday">Thursday</option>
+                    <option value = "friday">Friday</option>
+                    <option value = "saturday">Saturday</option>
+                  </select>
+                </div>
+                <div class = "input-box">
+                  <span class = "details">Arrival Time</span>
+                  <input type = "time" name = "reservation[arrival_time]" id = "arrival_time" placeholder = "Arrival Time" required>
+                </div>
+                <div class = "input-box">
+                  <span class = "details">Number Of Persons</span>
+                  <input type = "text" name = "reservation[number_of_persons]" id = "number_of_persons" placeholder = "Enter Number of Person(s)" required>
+                </div>
+                <div class = "input-box">
+                  <span class = "details">Room Type</span>
+                  <select class = "room_type" name = "reservation[room_type]" id = "room_type" required>
+                    <option disabled = "disabled" selected = "selected">--Choose Option</option>
+                    <option value = "extra large">Extra Large</option>
+                    <option value = "large">Large</option>
+                    <option value = "medium">Medium</option>
+                    <option value = "small">Small</option>
+                    <option value = "extra small">Extra Small</option>
+                  </select>
+                </div>
+                <div class = "input-box">
+                  <span class = "details">Phone Number</span>
+                  <input type = "tel" name = "reservation[phone_number]" id = "phone_number" placeholder = "Phone Number" required>
+                </div>
+              </div>
+              <div class = "button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                  Make Reservation
+                </button>
+                <!-- <input type = "submit" value = "Make Reservation"> -->
+              </div>
+              <!-- <a href = "/home">Back To Home</a> -->
+            </form>
+          </div>
+      
+        <footer class = "copyright">
+          <div class="section-footer" id="follow">
+            <h1><span>Follow Us</span></h1>
+            <div>
+              <a href="#" >
+                <img alt="Facebook" src="https://www.sololearn.com/Uploads/icons/facebook.png"/>
+              </a>
+              <a href="#">
+                <img alt="Twitter" src="https://www.sololearn.com/Uploads/icons/twitter.png" />
+              </a>
+            </div>
+          </div>
+          <p>&copy; 2022 City Royale</p>
+        </footer>
+      
+        
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script> 
+	      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Details</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<link rel="stylesheet" href="stylesheet/show.css">
+</head>
+<body>
+
+	<main class="container">
+
+	</main>
+	<nav class="navbar fixed-top navbar-expand-lg bg-dark">
+		<div class="container">
+		  <a class="navbar-brand" href="/home"><img src="images/logo2.png"></a>
+		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			  <li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="/home">Home</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="/reservation">Reservation</a>
+			  </li>
+			</ul>
+			<form class="d-flex" role="search">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<% if (!currentUser) { %>
+					<li class="nav-item">
+					  <a class="nav-link" href="/user_register">Sign Up / Register</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/userlogin">Login</a>
+					</li>
+					<% } else { %> 
+					<li class="nav-item">
+						<a class="nav-link" href="/logout">Logout</a>
+					</li>
+					<% } %> 
+				</ul>
+			</form>
+		</div>
+		</div>
+	</nav>
+
+	        Modal
+			<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+				<div class="modal-dialog">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <h5 class="modal-title" id="staticBackdropLabel">Confirmation Message</h5>
+					  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+					  Your reservation has been booked, a mail will be sent to your registered email.
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					  <button type="button" class="btn btn-primary">Understood</button>
+					</div>
+				  </div>
+				</div>
+			  </div> 
+
+    <div class = "reservation_details">
+        <h3><label for="">First Name:  </label><%=  reservation.first_name %></h3>
+        <h3><label for="">Last Name:  </label><%= reservation.last_name %></h3>
+        <h3><label for="">Email:  </label><%= reservation.email %></h3>
+        <h3><label for="">Check-in-date:  </label><%= reservation.check_in_date %></h3>
+        <h3><label for="">Check-out-date:  </label><%= reservation.check_out_date %></h3>
+        <h3><label for="">Day of the week:  </label><%= reservation.day_of_the_week %></h3>
+        <h3><label for="">Arrival Time:  </label><%= reservation.arrival_time %></h3>
+        <h3><label for="">Number Of Persons:  </label><%= reservation.number_of_persons %></h3>
+        <h3><label for="">Room Type:  </label><%= reservation.room_type %></h3>
+        <h3><label for="">Phone Number:  </label><%= reservation.phone_number %></h3>
+
+        <p>
+			<% if (!currentUser) { %> 
+            <form action="/reservations/<%= reservation._id %>?_method=DELETE" method = "POST">
+                <button>Delete</button>
+            </form>
+			<% } %> 
+            <a href = "/home">Back To Home</a>
+            
+        </p>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+</body>
+</html> -->
